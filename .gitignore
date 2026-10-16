@@ -1,0 +1,266 @@
+# ── Secrets & environment ────────────────────────────────────────────────────
+# Semua varian .env di semua depth (.env, .env.local, .env.adb.*, app.env, dll)
+.env
+.env.*
+*.env
+# ...kecuali template yang memang harus ikut di-push
+!.env.example
+!.env.*.example
+!.env.sample
+!*.env.example
+!env.example.txt
+
+# Kunci & sertifikat (termasuk signing Android/iOS)
+*.pem
+*.key
+*.crt
+*.cer
+*.p8
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.mobileprovision
+key.properties
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+service-account*.json
+credentials.json
+
+# Konfigurasi lokal yang bisa berisi token
+docker-compose.override.yml
+docker-compose.override.yaml
+compose.override.yml
+compose.override.yaml
+
+
+# ── Python (backend) ─────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+*.egg
+.eggs/
+wheels/
+sdist/
+.installed.cfg
+MANIFEST
+pip-wheel-metadata/
+.python-version
+instance/
+celerybeat-schedule
+celerybeat.pid
+.ipynb_checkpoints/
+
+# Virtual environment
+venv/
+.venv/
+env/
+ENV/
+virtualenv/
+
+# Test, lint & coverage cache
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pytype/
+.pyre/
+.tox/
+.nox/
+.hypothesis/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+nosetests.xml
+*.cover
+
+# Database lokal
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+
+
+# ── Node / JavaScript / TypeScript ───────────────────────────────────────────
+node_modules/
+jspm_packages/
+.pnp
+.pnp.*
+**/.yarn/*
+!**/.yarn/patches
+!**/.yarn/plugins
+!**/.yarn/releases
+!**/.yarn/versions
+
+# Log & debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Hasil build & cache framework (Next.js, Vite, Nuxt, Remix, Astro, SvelteKit, CRA, Expo)
+dist/
+dist-ssr/
+out/
+.next/
+.nuxt/
+.output/
+.svelte-kit/
+.astro/
+.vite/
+.turbo/
+.vercel/
+.netlify/
+.parcel-cache/
+.expo/
+.expo-shared/
+.eslintcache
+.stylelintcache
+*.tsbuildinfo
+next-env.d.ts
+.nyc_output/
+
+# CATATAN: package-lock.json, pnpm-lock.yaml, yarn.lock, bun.lockb,
+# pubspec.lock, poetry.lock, uv.lock JANGAN di-ignore. Lockfile harus ikut
+# di-commit supaya versi dependency konsisten.
+
+
+# ── Flutter / Dart ───────────────────────────────────────────────────────────
+.dart_tool/
+.packages
+.pub/
+.pub-cache/
+.flutter-plugins
+.flutter-plugins-dependencies
+.widget_preview/
+migrate_working_dir/
+**/doc/api/
+app.*.symbols
+app.*.map.json
+# Screenshot hasil widget test (test/features/farmer/farmer_flow_test.dart)
+**/artifacts/farmer/
+
+# File generate per mesin (berisi path absolut lokal)
+**/Flutter/ephemeral/
+**/flutter/ephemeral/
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/flutter_export_environment.sh
+**/ios/Flutter/.last_build_id
+**/ios/Flutter/App.framework
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Flutter.podspec
+**/ios/Flutter/app.flx
+**/ios/Flutter/app.zip
+**/ios/Flutter/flutter_assets/
+**/ios/ServiceDefinitions.json
+**/ios/Runner/GeneratedPluginRegistrant.*
+
+
+# ── iOS / macOS (Xcode, CocoaPods, SwiftPM) ──────────────────────────────────
+Pods/
+.symlinks/
+.swiftpm/
+.build/
+.buildlog/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+*.moved-aside
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+*.ipa
+*.dSYM
+*.dSYM.zip
+
+
+# ── Android (Gradle) ─────────────────────────────────────────────────────────
+.gradle/
+.cxx/
+.externalNativeBuild/
+local.properties
+captures/
+*.apk
+*.aab
+**/android/app/debug/
+**/android/app/profile/
+**/android/app/release/
+**/android/**/gradle-wrapper.jar
+**/android/**/GeneratedPluginRegistrant.java
+**/android/gradlew
+**/android/gradlew.bat
+
+
+# ── Supabase ─────────────────────────────────────────────────────────────────
+# State lokal CLI (project-ref, versi, pooler-url)
+**/supabase/.temp/
+**/supabase/.branches/
+.temp/
+
+
+# ── Build output, coverage & cache umum ──────────────────────────────────────
+build/
+coverage/
+.cache/
+
+
+# ── Log, temp & Docker ───────────────────────────────────────────────────────
+*.log
+logs/
+*.pid
+*.seed
+*.pid.lock
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+
+
+# ── macOS / Windows / Linux metadata ─────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+desktop.ini
+$RECYCLE.BIN/
+.directory
+.fuse_hidden*
+.nfs*
+
+
+# ── Editor & IDE ─────────────────────────────────────────────────────────────
+.idea/
+*.iml
+*.ipr
+*.iws
+.atom/
+.history/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+*.swp
+*.swo
+*~
+
+**/.vscode/*
+!**/.vscode/settings.json
+!**/.vscode/extensions.json
+!**/.vscode/launch.json
+!**/.vscode/tasks.json
