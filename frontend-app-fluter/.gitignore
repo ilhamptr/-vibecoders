@@ -1,0 +1,3 @@
+# Each developer has their own host ADB address.
+/.env
+/.env.adb.*

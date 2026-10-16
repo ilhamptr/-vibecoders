@@ -1,0 +1,36 @@
+services:
+  app:
+    build: ./backend
+    ports:
+      - "80:80"
+    env_file:
+      - ./backend/.env
+    volumes:
+      - ./backend/application:/usr/application
+    command: fastapi run main.py --host 0.0.0.0 --port 80 --reload
+    networks:
+      - app_network
+
+  ngrok:
+    image: ngrok/ngrok:latest
+    container_name: ngrok_tfund_tunnel
+    restart: unless-stopped
+    environment:
+      - NGROK_AUTHTOKEN=${NGROK_AUTHTOKEN}
+    command:
+      - "start"
+      - "--all"
+      - "--config"
+      - "/etc/ngrok.yml"
+    volumes:
+      - ./ngrok.yml:/etc/ngrok.yml
+    ports:
+      - "4040:4040" 
+    depends_on:
+      - app
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge

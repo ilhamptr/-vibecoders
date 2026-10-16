@@ -1,0 +1,35 @@
+services:
+  flutter:
+    image: plugfox/flutter:stable-android
+    platform: linux/amd64
+    container_name: flutter-dev
+
+    working_dir: /flutter
+
+    volumes:
+      - ./flutter:/flutter
+      - codex-data:/root/.codex
+      - antigravity-data:/root/.gemini
+
+    environment:
+      ANDROID_HOME: /opt/android
+      ANDROID_SDK_ROOT: /opt/android
+      ADB_SERVER_SOCKET: tcp:${ADB_HOST:-host.docker.internal}:5037
+
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+    stdin_open: true
+    tty: true
+
+    command: sleep infinity
+
+networks:
+  default:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: br-flutter
+
+volumes:
+  codex-data:
+  antigravity-data:

@@ -1,0 +1,6 @@
+version: "2"
+tunnels:
+  fastapi:
+    addr: app:80
+    proto: http
+    domain: adriel-unmeltable-annmarie.ngrok-free.dev

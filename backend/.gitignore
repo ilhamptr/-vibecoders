@@ -1,0 +1,30 @@
+**/.env
+
+# ── Python ──────────────────────────────────────────────────────────────────
+**/__pycache__/
+**/*.py[cod]
+*.pyo
+
+# ── macOS metadata ───────────────────────────────────────────────────────────
+.DS_Store
+**/.DS_Store
+
+# ── Supabase ─────────────────────────────────────────────────────────────────
+supabase/.temp/
+
+# ── AI-generated artifacts ─────────────────────────────────────────────────
+# graphify knowledge graph outputs (re-generated each session)
+graphify-out/
+
+# Antigravity / AGY IDE scratch files
+.gemini/
+
+# Generic AI tool output folders
+ai-out/
+ai-artifacts/
+
+# AGY skills lock (auto-generated)
+skills-lock.json
+
+# ── Workspace AI agent config (local only) ───────────────────────────────────
+.agents/
